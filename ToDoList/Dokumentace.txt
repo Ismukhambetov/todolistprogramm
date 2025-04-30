@@ -1,0 +1,100 @@
+Dokumentace k aplikaci ToDoList
+Obecný popis
+Aplikace ToDoList je konzolový program pro správu úkolů. Umožňuje uživatelům vytvářet, prohlížet, upravovat a mazat úkoly, stejně jako je ukládat do souboru a načítat ze souboru.
+
+Hlavní funkce
+Přidání nových úkolů
+
+Zobrazení všech úkolů
+
+Zobrazení aktivních (nedokončených) úkolů
+
+Zobrazení dokončených úkolů
+
+Zobrazení úkolů s termínem splnění do konce týdne
+
+Označení úkolu jako dokončeného
+
+Smazání úkolu
+
+Uložení úkolů do souboru
+
+Načtení úkolů ze souboru
+
+Struktura projektu
+1. ConsoleHelper.cs
+Pomocná třída pro práci s konzolovým rozhraním.
+
+Metody:
+
+PrintMenu() - zobrazí hlavní menu aplikace
+
+ReadTaskFromConsole() - načte údaje o úkolu z konzole
+
+ReadDeadline() - načte datum splnění úkolu
+
+ReadPriority() - načte prioritu úkolu
+
+ReadTaskIndex() - načte index úkolu
+
+2. FileManager.cs
+Třída pro správu ukládání a načítání úkolů do/z souboru.
+
+Metody:
+
+SaveToFile(List<Task> tasks, string path) - uloží seznam úkolů do souboru
+
+LoadFromFile(string path) - načte seznam úkolů ze souboru
+
+3. Program.cs
+Hlavní třída programu obsahující vstupní bod.
+
+Metody:
+
+Main() - hlavní smyčka programu zpracovávající uživatelský vstup
+
+PrintTasks(List<Task> tasks) - vypíše seznam úkolů do konzole
+
+4. Task.cs
+Třída reprezentující úkol.
+
+Vlastnosti:
+
+Title - název úkolu
+
+Description - popis úkolu
+
+IsCompleted - stav dokončení
+
+CreatedAt - datum vytvoření
+
+Deadline - termín splnění
+
+Priority - priorita (Low, Medium, High)
+
+Category - kategorie (Work, Study, Personal)
+
+CustomCategory - uživatelská kategorie
+
+Metody:
+
+ToString() - vrátí textovou reprezentaci úkolu
+
+5. TaskManager.cs
+Třída pro správu seznamu úkolů.
+
+Metody:
+
+AddTask(Task task) - přidá nový úkol
+
+DeleteTask(int index) - smaže úkol podle indexu
+
+MarkAsCompleted(int index) - označí úkol jako dokončený
+
+GetAllTasks() - vrátí všechny úkoly
+
+GetCompletedTasks() - vrátí dokončené úkoly
+
+GetActiveTasks() - vrátí aktivní úkoly
+
+GetTasksDueThisWeek() - vrátí úkoly na tento týden
